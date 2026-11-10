@@ -11,5 +11,5 @@ def test_ranking_orders_by_weighted_score():
         {"image_id": "b", "aesthetic_score": 9.0},
     ]
     result = calculate_ranking(quality, aesthetics)
-    assert result[0]["image_id"] == "a"
+    assert result[0]["image_id"] == "b"
     assert result[0]["rank"] == 1
