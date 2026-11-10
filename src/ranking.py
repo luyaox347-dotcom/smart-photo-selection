@@ -27,7 +27,7 @@ def calculate_ranking(
             "final_score": round(quality_weight * q + aesthetic_weight * a, 4),
         })
 
-    ranked.sort(key=lambda x: x["final_score"], reverse=True)
+    ranked.sort(key=lambda x: (-x["final_score"], x["image_id"]))
     for rank, item in enumerate(ranked, start=1):
         item["rank"] = rank
     return ranked
