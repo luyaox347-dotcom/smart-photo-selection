@@ -1,0 +1,14 @@
+file_name,case_type,expected_status
+01_landscape_rocket.jpg,landscape,success
+02_portrait_astronaut.png,portrait_face,success
+03_ultrawide_hubble.jpg,ultrawide_5_to_1,success
+04_tall_eiffel.jpg,tall_original_photo,success
+04_ultratall_rocket.jpg,ultratall_derived,success
+05_face_astronaut.png,single_human_face,success
+06_animal_cat.png,animal_subject,success
+07_dog_cc0.jpg,dog_subject,success
+07_still_life_coffee.png,still_life,success
+08_exif_orientation_6.jpg,exif_orientation_6,success
+09_corrupt_truncated.jpg,corrupt_file,error
+10_unsupported_rocket.bmp,unsupported_format,error
+11_grayscale_camera.png,grayscale,success

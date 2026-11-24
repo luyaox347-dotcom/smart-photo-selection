@@ -8,7 +8,7 @@ from src.pipeline import run_selection
 
 st.set_page_config(page_title="SmartPhotoSelection", layout="wide")
 st.title("智能选片系统")
-st.info("当前为模拟评分模式，分数仅用于验证流程。")
+st.info("画质分来自图像分析，美学分为模拟值，综合排名仅用于流程验证。")
 
 uploaded_files = st.file_uploader(
     "上传同一场景的照片（JPG / PNG）",
@@ -22,17 +22,17 @@ if uploaded_files:
 if st.button("开始分析", disabled=not uploaded_files):
     with TemporaryDirectory() as temp_dir:
         paths = []
-        names = {}
+        names_by_path = {}
         for index, file in enumerate(uploaded_files, start=1):
-            image_id = f"photo_{index:04d}"
-            path = Path(temp_dir) / f"{image_id}{Path(file.name).suffix.lower()}"
+            source_id = f"photo_{index:04d}"
+            path = Path(temp_dir) / f"{source_id}{Path(file.name).suffix.lower()}"
             path.write_bytes(file.getbuffer())
             paths.append(path)
-            names[image_id] = file.name
+            names_by_path[str(path)] = file.name
 
-        result = run_selection(paths)
+        result = run_selection(paths, output_dir=Path(temp_dir) / "processed")
         for error in result["errors"]:
-            name = names.get(error["image_id"])
+            name = names_by_path.get(error.get("original_path"))
             st.warning(f"{name}：{error['message']}" if name else error["message"])
 
         recommendation = result["recommendation"]
@@ -40,8 +40,9 @@ if st.button("开始分析", disabled=not uploaded_files):
             st.subheader("推荐照片")
             image_id = recommendation["image_id"]
             images = {item["image_id"]: item for item in result["images"]}
+            names = {key: names_by_path[item["original_path"]] for key, item in images.items()}
             st.image(Path(images[image_id]["image_path"]).read_bytes(), caption=names[image_id])
-            st.write(f"模拟综合分 {recommendation['final_score']:.2f}，排名第 1。")
+            st.write(f"演示综合分 {recommendation['final_score']:.2f}，排名第 1。")
 
             st.subheader("评分排名")
             st.dataframe(
@@ -50,7 +51,7 @@ if st.button("开始分析", disabled=not uploaded_files):
                         "排名": row["rank"],
                         "照片": names[row["image_id"]],
                         "画质分": row["quality_score"],
-                        "美学分": row["aesthetic_score"],
+                        "模拟美学分": row["aesthetic_score"],
                         "综合分": row["final_score"],
                     }
                     for row in result["ranking"]

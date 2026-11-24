@@ -1,0 +1,326 @@
+{
+  "environment": {
+    "system": "Windows-10-10.0.26200-SP0",
+    "cpu": "Intel(R) Core(TM) i7-14650HX",
+    "logical_cpus": 24,
+    "python": "3.10.11",
+    "opencv": "4.14.0",
+    "opencv_threads": 1,
+    "numpy": "2.2.6",
+    "pillow": "12.3.0",
+    "matplotlib": "3.10.9"
+  },
+  "default_config": {
+    "max_sharpness_edge": 512,
+    "laplacian_kernel": 1,
+    "alpha_background": 127,
+    "dark_threshold": 12,
+    "bright_threshold": 243,
+    "sharpness_reference": 1000.0,
+    "contrast_reference": 64.0,
+    "normalization": "log_sharpness",
+    "weights": [
+      0.45,
+      0.35,
+      0.2
+    ]
+  },
+  "synthetic": {
+    "seed": 20261124,
+    "groups": 3,
+    "images": 15,
+    "sizes": [
+      [
+        640,
+        480
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        3840,
+        2160
+      ]
+    ]
+  },
+  "timing": {
+    "warmup_batches": 2,
+    "measured_batches": 6,
+    "statistics": [
+      {
+        "width": 640,
+        "height": 480,
+        "stage": "read",
+        "measurements": 30,
+        "mean_ms": 0.6975866663803268,
+        "median_ms": 0.54689999888069,
+        "std_ms": 0.28156787208589307,
+        "min_ms": 0.4431000015756581,
+        "max_ms": 1.3052999966021162
+      },
+      {
+        "width": 640,
+        "height": 480,
+        "stage": "compute",
+        "measurements": 30,
+        "mean_ms": 2.0525266663753428,
+        "median_ms": 2.0349000005808193,
+        "std_ms": 0.08103578608821545,
+        "min_ms": 1.884499997686362,
+        "max_ms": 2.208400001109112
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "stage": "read",
+        "measurements": 30,
+        "mean_ms": 3.85284666675337,
+        "median_ms": 3.4622499988472555,
+        "std_ms": 0.9130488406922954,
+        "min_ms": 3.1512999994447455,
+        "max_ms": 5.733599999075523
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "stage": "compute",
+        "measurements": 30,
+        "mean_ms": 6.5014699995420715,
+        "median_ms": 6.475299998783157,
+        "std_ms": 0.25377519142027727,
+        "min_ms": 5.95219999740948,
+        "max_ms": 7.09389999974519
+      },
+      {
+        "width": 3840,
+        "height": 2160,
+        "stage": "read",
+        "measurements": 30,
+        "mean_ms": 13.77256333338058,
+        "median_ms": 12.645749999137479,
+        "std_ms": 2.7994955172982467,
+        "min_ms": 11.622599999100203,
+        "max_ms": 19.495399999868823
+      },
+      {
+        "width": 3840,
+        "height": 2160,
+        "stage": "compute",
+        "measurements": 30,
+        "mean_ms": 23.09403999982654,
+        "median_ms": 22.982150001553237,
+        "std_ms": 1.1751684828096716,
+        "min_ms": 20.911999999952968,
+        "max_ms": 26.059199997689575
+      }
+    ]
+  },
+  "configurations": [
+    {
+      "normalization": "log_sharpness",
+      "weights": "default",
+      "sharpness_weight": 0.45,
+      "exposure_weight": 0.35,
+      "contrast_weight": 0.2,
+      "pairs": 12,
+      "clean_wins": 12,
+      "ties": 0,
+      "clean_losses": 0,
+      "mean_margin_blurred": 2.9197540191181726,
+      "mean_margin_overexposed": 3.582643045336017,
+      "mean_margin_underexposed": 2.314858953547384,
+      "mean_margin_low_contrast": 2.3523041508045277
+    },
+    {
+      "normalization": "log_sharpness",
+      "weights": "equal",
+      "sharpness_weight": 0.3333333333333333,
+      "exposure_weight": 0.3333333333333333,
+      "contrast_weight": 0.3333333333333333,
+      "pairs": 12,
+      "clean_wins": 12,
+      "ties": 0,
+      "clean_losses": 0,
+      "mean_margin_blurred": 2.271851778802379,
+      "mean_margin_overexposed": 3.62313540954528,
+      "mean_margin_underexposed": 2.1617959535495825,
+      "mean_margin_low_contrast": 2.304863529136296
+    },
+    {
+      "normalization": "log_sharpness",
+      "weights": "exposure_first",
+      "sharpness_weight": 0.25,
+      "exposure_weight": 0.6,
+      "contrast_weight": 0.15,
+      "pairs": 12,
+      "clean_wins": 12,
+      "ties": 0,
+      "clean_losses": 0,
+      "mean_margin_blurred": 1.6449904811957683,
+      "mean_margin_overexposed": 5.140323555855736,
+      "mean_margin_underexposed": 3.1124945404992426,
+      "mean_margin_low_contrast": 1.4249430014404332
+    },
+    {
+      "normalization": "log_sharpness",
+      "weights": "sharpness_only",
+      "sharpness_weight": 1,
+      "exposure_weight": 0,
+      "contrast_weight": 0,
+      "pairs": 12,
+      "clean_wins": 12,
+      "ties": 0,
+      "clean_losses": 0,
+      "mean_margin_blurred": 6.2265718073469785,
+      "mean_margin_overexposed": 1.1021119650249,
+      "mean_margin_underexposed": 1.4056273582322636,
+      "mean_margin_low_contrast": 3.8775441332909986
+    },
+    {
+      "normalization": "log_sharpness",
+      "weights": "exposure_only",
+      "sharpness_weight": 0,
+      "exposure_weight": 1,
+      "contrast_weight": 0,
+      "pairs": 12,
+      "clean_wins": 6,
+      "ties": 6,
+      "clean_losses": 0,
+      "mean_margin_blurred": 0.0,
+      "mean_margin_overexposed": 7.554892055684157,
+      "mean_margin_underexposed": 4.442496945730453,
+      "mean_margin_low_contrast": 0.0
+    },
+    {
+      "normalization": "log_sharpness",
+      "weights": "contrast_only",
+      "sharpness_weight": 0,
+      "exposure_weight": 0,
+      "contrast_weight": 1,
+      "pairs": 12,
+      "clean_wins": 12,
+      "ties": 0,
+      "clean_losses": 0,
+      "mean_margin_blurred": 0.5889835290601589,
+      "mean_margin_overexposed": 2.212402207926784,
+      "mean_margin_underexposed": 0.6372635566860313,
+      "mean_margin_low_contrast": 3.03704645411789
+    },
+    {
+      "normalization": "linear",
+      "weights": "default",
+      "sharpness_weight": 0.45,
+      "exposure_weight": 0.35,
+      "contrast_weight": 0.2,
+      "pairs": 12,
+      "clean_wins": 12,
+      "ties": 0,
+      "clean_losses": 0,
+      "mean_margin_blurred": 0.8574628129897658,
+      "mean_margin_overexposed": 3.4840865158518297,
+      "mean_margin_underexposed": 2.1468702926521095,
+      "mean_margin_low_contrast": 1.3057285860709738
+    },
+    {
+      "normalization": "linear",
+      "weights": "equal",
+      "sharpness_weight": 0.3333333333333333,
+      "exposure_weight": 0.3333333333333333,
+      "contrast_weight": 0.3333333333333333,
+      "pairs": 12,
+      "clean_wins": 12,
+      "ties": 0,
+      "clean_losses": 0,
+      "mean_margin_blurred": 0.7442286631517083,
+      "mean_margin_overexposed": 3.5501305728903265,
+      "mean_margin_underexposed": 2.0373599084419722,
+      "mean_margin_low_contrast": 1.5296223700744045
+    },
+    {
+      "normalization": "linear",
+      "weights": "exposure_first",
+      "sharpness_weight": 0.25,
+      "exposure_weight": 0.6,
+      "contrast_weight": 0.15,
+      "pairs": 12,
+      "clean_wins": 12,
+      "ties": 0,
+      "clean_losses": 0,
+      "mean_margin_blurred": 0.4992731444577651,
+      "mean_margin_overexposed": 5.085569928364522,
+      "mean_margin_underexposed": 3.019167506668535,
+      "mean_margin_low_contrast": 0.8435121321440148
+    },
+    {
+      "normalization": "linear",
+      "weights": "sharpness_only",
+      "sharpness_weight": 1,
+      "exposure_weight": 0,
+      "contrast_weight": 0,
+      "pairs": 12,
+      "clean_wins": 12,
+      "ties": 0,
+      "clean_losses": 0,
+      "mean_margin_blurred": 1.6437024603949653,
+      "mean_margin_overexposed": 0.8830974550600406,
+      "mean_margin_underexposed": 1.032319222909433,
+      "mean_margin_low_contrast": 1.551820656105324
+    },
+    {
+      "normalization": "linear",
+      "weights": "exposure_only",
+      "sharpness_weight": 0,
+      "exposure_weight": 1,
+      "contrast_weight": 0,
+      "pairs": 12,
+      "clean_wins": 6,
+      "ties": 6,
+      "clean_losses": 0,
+      "mean_margin_blurred": 0.0,
+      "mean_margin_overexposed": 7.554892055684157,
+      "mean_margin_underexposed": 4.442496945730453,
+      "mean_margin_low_contrast": 0.0
+    },
+    {
+      "normalization": "linear",
+      "weights": "contrast_only",
+      "sharpness_weight": 0,
+      "exposure_weight": 0,
+      "contrast_weight": 1,
+      "pairs": 12,
+      "clean_wins": 12,
+      "ties": 0,
+      "clean_losses": 0,
+      "mean_margin_blurred": 0.5889835290601589,
+      "mean_margin_overexposed": 2.212402207926784,
+      "mean_margin_underexposed": 0.6372635566860313,
+      "mean_margin_low_contrast": 3.03704645411789
+    }
+  ],
+  "real_cases": {
+    "input_directory": "data/sample/real_cases",
+    "images": 13,
+    "crops": 73,
+    "scored_images": 11,
+    "scored_crops": 73,
+    "failed_images": [
+      {
+        "source_id": "09_corrupt_truncated",
+        "error": "OpenCV 无法解码图片像素"
+      },
+      {
+        "source_id": "10_unsupported_rocket",
+        "error": "不支持的图片格式：.bmp"
+      }
+    ],
+    "image_score_range": [
+      7.0975163098630105,
+      9.79963493347168
+    ],
+    "crop_score_range": [
+      6.750461586895115,
+      9.79963493347168
+    ]
+  }
+}

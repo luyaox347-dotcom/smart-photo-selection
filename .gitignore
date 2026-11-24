@@ -11,3 +11,12 @@ data/processed/*
 models/**/*.pth
 models/**/*.pt
 models/**/*.onnx
+
+# Reproducible experiment reports delivered by A and B.
+!outputs/experiments/
+outputs/experiments/*
+!outputs/experiments/quality/
+!outputs/experiments/real_cases/
+
+# YuNet model and license shipped together by A.
+!models/face/face_detection_yunet_2023mar.onnx

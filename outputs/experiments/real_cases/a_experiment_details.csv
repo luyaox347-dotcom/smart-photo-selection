@@ -1,0 +1,14 @@
+﻿source_id,image_id,status,error,expected_status,expectation_met,original_width,original_height,processed_width,processed_height,orientation_corrected,preprocessing_time_ms,crop_status,crop_error,crop_count,crop_sources,crop_generation_time_ms,raw_candidate_count,unique_candidate_count,candidate_validity_rate,face_detector,face_detection_count,face_score_threshold,face_nms_threshold
+01_landscape_rocket,real_cases__01_landscape_rocket__c2dd0de7,success,,success,True,640,427,640,427,False,43.768,success,,7,center;original;saliency,144.254,7,7,100.0,yunet_2023mar,0,0.9,0.3
+02_portrait_astronaut,real_cases__02_portrait_astronaut__fde1ced0,success,,success,True,300,512,300,512,False,19.708,success,,7,center;face;original;saliency,63.029,9,9,100.0,yunet_2023mar,1,0.9,0.3
+03_ultrawide_hubble,real_cases__03_ultrawide_hubble__af642bbd,success,,success,True,1000,200,1000,200,False,16.926,success,,7,center;original;saliency,60.329,7,7,100.0,yunet_2023mar,0,0.9,0.3
+04_tall_eiffel,real_cases__04_tall_eiffel__1f350dea,success,,success,True,2678,4955,2678,4955,False,1431.435,success,,7,center;original;saliency,6075.065,7,7,100.0,yunet_2023mar,0,0.9,0.3
+04_ultratall_rocket,real_cases__04_ultratall_rocket__8f730a02,success,,success,True,160,427,160,427,False,14.183,success,,7,center;original;saliency,39.884,7,7,100.0,yunet_2023mar,0,0.9,0.3
+05_face_astronaut,real_cases__05_face_astronaut__88431cd9,success,,success,True,512,512,512,512,False,24.083,success,,7,center;face;original;saliency,101.202,9,7,77.778,yunet_2023mar,1,0.9,0.3
+06_animal_cat,real_cases__06_animal_cat__596aa1e7,success,,success,True,451,300,451,300,False,18.039,success,,7,center;original;saliency,74.736,7,7,100.0,yunet_2023mar,0,0.9,0.3
+07_dog_cc0,real_cases__07_dog_cc0__5c9c4057,success,,success,True,2816,1584,2816,1584,False,470.696,success,,5,center;original;saliency,1349.445,7,5,71.429,yunet_2023mar,0,0.9,0.3
+07_still_life_coffee,real_cases__07_still_life_coffee__cc02f8ca,success,,success,True,600,400,600,400,False,31.413,success,,7,center;original;saliency,125.711,7,7,100.0,yunet_2023mar,0,0.9,0.3
+08_exif_orientation_6,real_cases__08_exif_orientation_6__6c657e11,success,,success,True,427,640,640,427,True,22.735,success,,7,center;original;saliency,127.439,7,7,100.0,yunet_2023mar,0,0.9,0.3
+09_corrupt_truncated,,error,OpenCV 无法解码图片像素,error,True,,,,,False,0.516,skipped,,0,,,0,0,,,,,
+10_unsupported_rocket,,error,不支持的图片格式：.bmp,error,True,,,,,False,0.03,skipped,,0,,,0,0,,,,,
+11_grayscale_camera,real_cases__11_grayscale_camera__b0793d2a,success,,success,True,512,512,512,512,False,14.225,success,,5,center;original;saliency,53.916,7,5,71.429,yunet_2023mar,0,0.9,0.3
