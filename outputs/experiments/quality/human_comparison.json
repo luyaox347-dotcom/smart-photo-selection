@@ -1,0 +1,15 @@
+{
+  "status": "pending",
+  "annotation_rows": 0,
+  "participating_groups": 0,
+  "compared_annotations": 0,
+  "agreed_annotations": 0,
+  "annotation_agreement_rate": null,
+  "mean_group_agreement_rate": null,
+  "tie_tolerance": 1e-09,
+  "group_agreement": {},
+  "comparisons": [],
+  "excluded_annotations": [],
+  "scores": "outputs/experiments/quality/real_quality.csv",
+  "annotations": "data/annotations/human_selection_template.csv"
+}

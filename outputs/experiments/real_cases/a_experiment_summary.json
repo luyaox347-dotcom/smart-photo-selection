@@ -1,0 +1,15 @@
+{
+  "input_directory": "data\\sample\\real_cases",
+  "total_files": 13,
+  "preprocessing_success_count": 11,
+  "preprocessing_failure_count": 2,
+  "preprocessing_success_rate": 84.615,
+  "expected_outcome_accuracy": 100.0,
+  "orientation_corrected_count": 1,
+  "average_preprocessing_time_ms": 162.135,
+  "crop_success_count": 11,
+  "crop_failure_count": 0,
+  "average_crop_generation_time_ms": 746.819,
+  "average_returned_crop_count": 6.636,
+  "overall_candidate_validity_rate": 92.593
+}

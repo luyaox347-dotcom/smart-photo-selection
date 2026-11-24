@@ -1,6 +1,9 @@
-numpy
+numpy<2; sys_platform == "darwin" and platform_machine == "x86_64"
+numpy; sys_platform != "darwin" or platform_machine != "x86_64"
 pandas
-opencv-python
+# OpenCV 4.9 provides Intel macOS wheels and uses the NumPy 1.x ABI.
+opencv-contrib-python==4.9.0.80; sys_platform == "darwin" and platform_machine == "x86_64"
+opencv-contrib-python>=4.8,<5; sys_platform != "darwin" or platform_machine != "x86_64"
 Pillow
 streamlit
 matplotlib
